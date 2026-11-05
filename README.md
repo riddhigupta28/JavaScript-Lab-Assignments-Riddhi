@@ -39,3 +39,10 @@ node task1.js
 
 For HTML tasks, open the relevant HTML file in a modern browser and interact with the page.
 
+
+
+## Submission notes
+
+- 42 non-empty JavaScript files passed the Node.js validation run. Two source files are intentionally empty because their task statements were not present in the supplied reference: Lab 6 Task 3 and Lab 15 Task 3. Their README files mark them as incomplete; no guessed solutions are included.
+- The 48 PNG files are generated output-preview panels, not genuine screenshots captured from a live IDE or browser.
+- The four HTML tasks should be opened and interacted with in a browser before submission. Test the Local Storage exercise from a local web server so persistence can be checked reliably.
