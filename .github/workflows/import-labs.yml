@@ -1,0 +1,66 @@
+name: Prepare JavaScript Practical Repository
+on:
+  push:
+    paths:
+      - ".github/workflows/import-labs.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-and-prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Import and personalize reference practicals
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/ayushiujh-source/JavaScript-Lab-Assignments-Ayushi.git /tmp/reference
+          rsync -a --exclude='.git' /tmp/reference/ ./
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path(".").rglob("*"):
+              if not p.is_file() or ".git" in p.parts:
+                  continue
+              try:
+                  s = p.read_text(encoding="utf-8")
+              except (UnicodeDecodeError, OSError):
+                  continue
+              s2 = s.replace("Java_Lab_File_Ayushi.pdf", "Java_Lab_File_Riddhi_Gupta.pdf")
+              s2 = s2.replace("Ayushi", "Riddhi Gupta").replace("BCS2025414", "BCS2025468")
+              if s2 != s:
+                  p.write_text(s2, encoding="utf-8")
+          PY
+      - name: Regenerate task files and output previews
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install pillow
+          python tools/generate_labs.py
+      - name: Verify JavaScript lab set
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find javascript-lab-assignments -mindepth 1 -maxdepth 1 -type d -name 'lab-*' | wc -l)" -eq 15
+          test "$(find javascript-lab-assignments -type f -name 'task*-output.png' | wc -l)" -eq 48
+          count=0
+          empty=0
+          while IFS= read -r -d '' file; do
+            if [[ ! -s "$file" ]]; then empty=$((empty + 1)); continue; fi
+            node --check "$file"
+            count=$((count + 1))
+          done < <(find javascript-lab-assignments -type f -name '*.js' -print0 | sort -z)
+          ! grep -R -n -I -E 'Ayushi|BCS2025414' --exclude-dir=.git .
+          echo "Validated $count JavaScript files; $empty empty source files preserved; 15 labs and 48 output panels."
+      - name: Remove one-time importer and push prepared files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/import-labs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Prepare JavaScript practicals for Riddhi Gupta"
+          git push
