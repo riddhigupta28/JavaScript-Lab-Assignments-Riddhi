@@ -1,0 +1,1 @@
+const colors=["Blue","Green","Orange"];const [first,second]=colors;console.log(first,second);

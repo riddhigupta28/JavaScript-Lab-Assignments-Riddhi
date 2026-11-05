@@ -1,0 +1,1 @@
+const student={name:"Riya",roll:101,active:true};console.log(JSON.stringify(student));

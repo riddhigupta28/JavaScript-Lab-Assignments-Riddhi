@@ -1,0 +1,1 @@
+function Student(name,roll){this.name=name;this.roll=roll;}const s=new Student("Aarav",204);console.log(s.name,s.roll);

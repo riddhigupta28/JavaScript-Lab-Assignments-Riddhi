@@ -1,0 +1,1 @@
+const value="42",number=Number(value); console.log(typeof value,value); console.log(typeof number,number); console.log("Concatenation:",value+8);

@@ -1,0 +1,1 @@
+class Security{constructor(pin){this.pin=String(pin);}check(value){return this.pin===String(value);}}const s=new Security(2468);console.log(s.check(2468),s.check(1234));

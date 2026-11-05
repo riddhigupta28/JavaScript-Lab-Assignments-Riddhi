@@ -1,0 +1,1 @@
+function Candidate(name,marks){this.name=name;this.marks=marks;}Candidate.prototype.result=function(){return this.marks>=40?"Pass":"Fail";};console.log(new Candidate("Neha",78).result());

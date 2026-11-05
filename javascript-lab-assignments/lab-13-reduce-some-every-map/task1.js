@@ -1,0 +1,1 @@
+const prices=[120,250,80,150];console.log(prices.reduce((sum,x)=>sum+x,0));

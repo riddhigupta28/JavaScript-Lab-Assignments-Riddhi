@@ -1,0 +1,1 @@
+const marks=86; let grade;if(marks>=90)grade="A";else if(marks>=75)grade="B";else if(marks>=60)grade="C";else grade="Needs improvement";console.log("Grade:",grade);

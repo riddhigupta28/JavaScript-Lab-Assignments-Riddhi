@@ -1,0 +1,1 @@
+let ticks=0;const timer=setInterval(()=>{console.log("Tick",++ticks);if(ticks===3)clearInterval(timer);},100);

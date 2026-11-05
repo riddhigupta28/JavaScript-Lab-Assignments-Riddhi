@@ -1,0 +1,1 @@
+function calculate(a,op,b){switch(op){case "+":return a+b;case "-":return a-b;case "*":return a*b;case "/":return b? a/b:"Cannot divide by zero";default:return "Invalid operator";}} console.log(calculate(18,"+",6)); console.log(calculate(18,"*",6));

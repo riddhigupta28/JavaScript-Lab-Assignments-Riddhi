@@ -1,0 +1,1 @@
+function applyTwice(value,fn){return fn(fn(value));}console.log(applyTwice(5,n=>n*2));

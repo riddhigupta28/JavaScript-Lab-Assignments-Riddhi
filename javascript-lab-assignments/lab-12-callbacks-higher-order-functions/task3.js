@@ -1,0 +1,1 @@
+function repeat(fn){for(let i=1;i<=3;i++)fn(i);}repeat(i=>console.log("Round",i));

@@ -1,0 +1,1 @@
+const marks=[42,55,38,71];console.log(marks.some(x=>x<40));console.log(marks.every(x=>x>=35));

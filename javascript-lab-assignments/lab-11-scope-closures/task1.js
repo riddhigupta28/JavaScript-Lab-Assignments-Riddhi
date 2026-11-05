@@ -1,0 +1,1 @@
+const message="outside";if(true){const local="inside block";console.log(local);}console.log(message);

@@ -1,0 +1,1 @@
+["Java","JavaScript","Python"].forEach((s,i)=>console.log(i+1,s));

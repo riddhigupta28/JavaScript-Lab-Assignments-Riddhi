@@ -1,0 +1,1 @@
+async function showUsers(){const users=await Promise.resolve([{name:"Aarav"},{name:"Riya"},{name:"Kabir"}]);users.forEach(u=>console.log(u.name));}showUsers();

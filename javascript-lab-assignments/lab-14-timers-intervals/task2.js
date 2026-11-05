@@ -1,0 +1,1 @@
+const timer=setTimeout(()=>console.log("Should not print"),100);clearTimeout(timer);console.log("Timeout cancelled");

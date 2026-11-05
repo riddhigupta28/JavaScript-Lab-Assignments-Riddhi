@@ -1,0 +1,1 @@
+function checkMarks(m){return new Promise(resolve=>{if(m>=0&&m<=100)resolve("Valid marks: "+m);});}checkMarks(82).then(console.log);

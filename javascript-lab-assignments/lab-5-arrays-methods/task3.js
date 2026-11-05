@@ -1,0 +1,1 @@
+const marks=[45,72,88,39,61,95];console.log(marks.filter(x=>x>=60));

@@ -1,0 +1,1 @@
+const profile={name:"Kabir",course:"B.Tech CSE"};const {name,course}=profile;console.log(name,course);

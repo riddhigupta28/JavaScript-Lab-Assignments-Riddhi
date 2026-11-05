@@ -1,0 +1,1 @@
+class Person{constructor(name){this.name=name;}introduce(){return "My name is "+this.name;}}class Teacher extends Person{teach(){return this.name+" teaches JavaScript";}}const t=new Teacher("Meera");console.log(t.introduce(),t.teach());

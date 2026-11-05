@@ -1,0 +1,1 @@
+const college="Invertis University"; let semester=3; console.log(college); console.log("Semester:",semester); semester++; console.log("Next semester:",semester);

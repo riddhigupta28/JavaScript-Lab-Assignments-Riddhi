@@ -1,0 +1,1 @@
+const student={name:"Isha",semester:2};console.log(student.semester);student.semester=3;console.log(student.semester);

@@ -1,0 +1,1 @@
+console.log("First");setTimeout(()=>console.log("Timeout callback"),0);console.log("Second");

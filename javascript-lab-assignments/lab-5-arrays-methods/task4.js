@@ -1,0 +1,1 @@
+const matrix=[[10,20],[30,40],[50,60]];console.log(matrix[1][0]);console.log(matrix[2]);

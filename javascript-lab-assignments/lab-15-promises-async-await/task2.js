@@ -1,0 +1,1 @@
+function checkMarks(m){return new Promise((resolve,reject)=>m>=0&&m<=100?resolve("Valid marks"):reject(new Error("Marks must be between 0 and 100")));}checkMarks(125).catch(e=>console.log("Error:",e.message));

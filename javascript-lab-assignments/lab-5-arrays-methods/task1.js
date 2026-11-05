@@ -1,0 +1,1 @@
+const subjects=["Java","JavaScript","Python","DBMS"];console.log(subjects.length,subjects[0]);

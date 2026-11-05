@@ -1,0 +1,1 @@
+const x=JSON.parse('{"course":"B.Tech CSE","semester":3}');console.log(x.course,x.semester);

@@ -1,0 +1,1 @@
+const marks=[50,65,70];const updated=marks.map(x=>x+5);console.log(marks);console.log(updated);

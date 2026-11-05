@@ -1,0 +1,1 @@
+function displayMarks(marks,formatter){marks.forEach(x=>console.log(formatter(x)));}displayMarks([62,75,91],x=>"Marks: "+x);

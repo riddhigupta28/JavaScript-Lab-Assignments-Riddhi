@@ -1,0 +1,1 @@
+const engine={start(){return "Engine started";}};class Car{constructor(model,unit){this.model=model;this.engine=unit;}start(){return this.model+": "+this.engine.start();}}console.log(new Car("City",engine).start());

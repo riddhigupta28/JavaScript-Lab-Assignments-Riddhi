@@ -1,0 +1,1 @@
+function bill(amount,tax=0.05){return amount*(1+tax);} console.log("Total:",bill(800)); console.log("With 8%:",bill(800,0.08));

@@ -1,0 +1,1 @@
+class Book{constructor(title,author){this.title=title;this.author=author;}summary(){return this.title+" by "+this.author;}}console.log(new Book("The Alchemist","Paulo Coelho").summary());

@@ -1,0 +1,1 @@
+let n=1,total=0;while(total<=20){total+=n;console.log(n,total);n++;}console.log("Final:",total);

@@ -1,0 +1,1 @@
+const college="Invertis University";function showCollege(){console.log(college);}showCollege();

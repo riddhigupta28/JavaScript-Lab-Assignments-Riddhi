@@ -1,0 +1,1 @@
+const a=18,b=7,operation="sum"; console.log("Result:",operation==="sum"?a+b:a-b);

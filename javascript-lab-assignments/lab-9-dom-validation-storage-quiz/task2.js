@@ -1,0 +1,1 @@
+function validateName(name){const errors=[];if(!name.trim())errors.push("Name is required");if(name.trim().length===1)errors.push("Name is too short");return errors;}console.log(validateName("Riddhi Gupta"));console.log(validateName(""));

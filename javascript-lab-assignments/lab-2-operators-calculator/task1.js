@@ -1,0 +1,1 @@
+const a=24,b=6; console.log("Add:",a+b); console.log("Subtract:",a-b); console.log("Multiply:",a*b); console.log("Divide:",a/b); console.log("Remainder:",a%b);
