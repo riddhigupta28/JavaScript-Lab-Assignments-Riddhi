@@ -18,7 +18,7 @@ jobs:
         run: |
           set -euo pipefail
           git clone --depth 1 https://github.com/ayushiujh-source/JavaScript-Lab-Assignments-Ayushi.git /tmp/reference
-          rsync -a --exclude='.git' /tmp/reference/ ./
+          rsync -a --exclude='.git' --exclude='.github/workflows/***' /tmp/reference/ ./
           python - <<'PY'
           from pathlib import Path
           for p in Path(".").rglob("*"):
@@ -54,13 +54,13 @@ jobs:
           done < <(find javascript-lab-assignments -type f -name '*.js' -print0 | sort -z)
           ! grep -R -n -I -E 'Ayushi|BCS2025414' --exclude-dir=.git .
           echo "Validated $count JavaScript files; $empty empty source files preserved; 15 labs and 48 output panels."
-      - name: Remove one-time importer and push prepared files
+      - name: Commit prepared files
         shell: bash
         run: |
           set -euo pipefail
-          rm -f .github/workflows/import-labs.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f test.txt
           git add -A
           git commit -m "Prepare JavaScript practicals for Riddhi Gupta"
           git push
